@@ -116,7 +116,7 @@ export default function Home() {
         >
           <motion.h1 variants={fadeUp} className="text-5xl md:text-[64px] lg:text-7xl font-semibold tracking-tight text-opti-text leading-[1.1] mb-6 text-center w-full flex flex-col items-center">
             <span className="mb-2 md:mb-0 text-center">AI agents that run your business</span>
-            <span className="text-opti-muted mt-2 md:mt-0 text-center">from Decisions to Execution</span>
+            <span className="text-opti-muted mt-2 md:mt-0 text-center"><span className="text-black">from</span> Decisions to Execution</span>
           </motion.h1>
 
           <motion.p variants={fadeUp} className="text-xl md:text-2xl text-opti-muted w-full max-w-[1200px] mx-auto px-4 mb-10 leading-relaxed text-center flex flex-col items-center">
@@ -185,14 +185,17 @@ export default function Home() {
             Deployed across high-scale retail, banking, and digital businesses
           </motion.p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-24 text-center divide-y md:divide-y-0 md:divide-x divide-zinc-800">
+          <div className="grid grid-cols-1 md:grid-cols-3 text-center divide-y md:divide-y-0 md:divide-x divide-zinc-800">
             {[
-              { stat: "18–32%", label: "Revenue Uplift" },
+              { prefix: "Upto", stat: "32%", label: "Revenue Uplift" },
               { stat: "1.6x - 3.2x", label: "Gross Profit Improvement" },
-              { stat: "66%", label: "Reduction in cost to address Attrition" },
+              { prefix: "Upto", stat: "66%", label: "Reduction in cost to address Attrition" },
             ].map((item, i) => (
-              <motion.div key={i} variants={fadeUp} className="flex flex-col items-center pt-8 md:pt-0 first:pt-0">
-                <span className="text-4xl md:text-5xl font-bold tracking-tight mb-2 text-opti-accent-teal">{item.stat}</span>
+              <motion.div key={i} variants={fadeUp} className="flex flex-col items-center justify-center h-full py-8 md:py-0 px-2 md:px-4 w-full relative">
+                <span className="text-4xl md:text-5xl font-bold tracking-tight mb-2 text-opti-accent-teal flex items-baseline justify-center">
+                  {item.prefix && <span className="text-xl md:text-2xl font-medium tracking-normal text-opti-accent-teal mr-1.5">{item.prefix}</span>}
+                  {item.stat}
+                </span>
                 <span className="text-sm font-medium text-zinc-400">{item.label}</span>
               </motion.div>
             ))}
