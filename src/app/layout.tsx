@@ -4,8 +4,10 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SmoothScroll from "@/components/layout/SmoothScroll";
+import ContactPopup from "@/components/ContactPopup";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+
 
 export const metadata: Metadata = {
   title: "OptiNyxus | Autonomous Decisioning System",
@@ -26,6 +28,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
+          <ContactPopup />
         </SmoothScroll>
       </body>
     </html>

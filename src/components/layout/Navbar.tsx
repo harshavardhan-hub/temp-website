@@ -61,12 +61,15 @@ export default function Navbar() {
 
           {/* Desktop CTA (Right) */}
           <div className="hidden md:flex items-center gap-6 relative z-50">
-            <Link href="/contact" className="group relative overflow-hidden bg-opti-text text-white px-5 py-2.5 rounded-[12px] text-sm font-medium transition-transform active:scale-95 shadow-sm">
+            <button 
+              onClick={() => window.dispatchEvent(new CustomEvent('open-contact'))} 
+              className="group relative overflow-hidden bg-opti-text text-white px-5 py-2.5 rounded-[12px] text-sm font-medium transition-transform active:scale-95 shadow-sm"
+            >
               <span className="relative z-10 flex items-center gap-2">Request demo</span>
               <motion.div 
                 className="absolute inset-0 bg-gradient-to-r from-gray-700 to-black opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
               />
-            </Link>
+            </button>
           </div>
 
           {/* Mobile Toggle */}
@@ -118,9 +121,12 @@ export default function Navbar() {
                  transition={{ duration: 0.5, delay: links.length * 0.1, ease: [0.16, 1, 0.3, 1] }}
                  className="mt-8 flex flex-col gap-4"
                >
-                 <Link href="/contact" onClick={() => setMobileMenu(false)} className="bg-opti-text text-white text-center px-6 py-5 rounded-[16px] font-medium text-lg w-full flex items-center justify-center gap-2 shadow-lg shadow-black/10">
+                 <button 
+                   onClick={() => { setMobileMenu(false); window.dispatchEvent(new CustomEvent('open-contact')); }}
+                   className="bg-opti-text text-white text-center px-6 py-5 rounded-[16px] font-medium text-lg w-full flex items-center justify-center gap-2 shadow-lg shadow-black/10"
+                 >
                    Request demo
-                 </Link>
+                 </button>
                </motion.div>
             </nav>
           </motion.div>

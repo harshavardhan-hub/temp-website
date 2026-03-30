@@ -109,23 +109,28 @@ export default function Home() {
         <div className="absolute top-[calc(50%+36px)] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-opti-accent-pink/30 rounded-full blur-[100px] pointer-events-none -z-10" />
 
         <motion.div
-          className="max-w-4xl max-auto text-center z-10"
+          className="max-w-[72rem] mx-auto text-center z-10 flex flex-col items-center justify-center w-full"
           initial="hidden"
           animate="visible"
           variants={stagger}
         >
-          <motion.h1 variants={fadeUp} className="text-5xl md:text-7xl font-semibold tracking-tight text-opti-text leading-[1.1] mb-6 text-balance">
-            AI agents that run your business <span className="text-opti-muted">end to end.</span>
+          <motion.h1 variants={fadeUp} className="text-5xl md:text-[64px] lg:text-7xl font-semibold tracking-tight text-opti-text leading-[1.1] mb-6 text-center w-full flex flex-col items-center">
+            <span className="mb-2 md:mb-0 text-center">AI agents that run your business</span>
+            <span className="text-opti-muted mt-2 md:mt-0 text-center">from Decisions to Execution</span>
           </motion.h1>
 
-          <motion.p variants={fadeUp} className="text-xl md:text-2xl text-opti-muted max-w-2xl mx-auto mb-10 leading-relaxed text-balance">
-            OptiNyxus deploys autonomous agents that identify opportunities, set prices, engage customers and execute operations in real time.
+          <motion.p variants={fadeUp} className="text-xl md:text-2xl text-opti-muted w-full max-w-[1200px] mx-auto px-4 mb-10 leading-relaxed text-center flex flex-col items-center">
+            <span className="text-center">OptiNyxus deploys autonomous agents that</span>
+            <span className="text-center md:whitespace-nowrap">identify opportunities, set prices, engage customers and execute operations in real time.</span>
           </motion.p>
 
           <motion.div variants={fadeUp} className="flex flex-col sm:flex-row justify-center gap-4 mb-20">
-            <Link href="/demo" className="bg-opti-text text-white px-8 py-4 rounded-[16px] font-medium hover:bg-black transition-all hover:scale-105 active:scale-95 shadow-lg shadow-black/10">
+            <button 
+              onClick={() => window.dispatchEvent(new CustomEvent('open-contact'))}
+              className="bg-opti-text text-white px-8 py-4 rounded-[16px] font-medium hover:bg-black transition-all hover:scale-105 active:scale-95 shadow-lg shadow-black/10"
+            >
               See it in action
-            </Link>
+            </button>
             <Link href="/how-it-works" className="bg-white text-opti-text border border-opti-border px-8 py-4 rounded-[16px] font-medium hover:bg-gray-50 transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
               Explore platform <ArrowRight className="w-4 h-4" />
             </Link>
