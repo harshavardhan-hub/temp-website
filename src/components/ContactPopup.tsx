@@ -30,15 +30,11 @@ export default function ContactPopup() {
             <Mail className="w-8 h-8" />
           </div>
           
-          <h2 className="text-2xl font-bold mb-3 text-opti-text">
-            Get in touch
-          </h2>
-          
-          <p className="text-gray-600 mb-8 leading-relaxed">
+          <p className="text-gray-600 mb-8 leading-relaxed text-lg">
             Please drop a mail to
             <a 
               href="mailto:info@optinyxus.onmicrosoft.com" 
-              className="block mt-2 font-semibold text-opti-accent-teal hover:underline text-lg sm:text-xl break-all"
+              className="block mt-2 font-semibold text-opti-accent-teal hover:underline text-xl break-all"
             >
               info@optinyxus.onmicrosoft.com
             </a>
