@@ -114,18 +114,18 @@ export default function Home() {
           animate="visible"
           variants={stagger}
         >
-          <motion.h1 variants={fadeUp} className="text-4xl sm:text-5xl md:text-[64px] lg:text-7xl font-semibold tracking-tight text-opti-text leading-[1.1] mb-6 text-center w-full flex flex-col items-center text-balance px-2">
-            <span className="mb-2 md:mb-0 text-center">AI agents that run your business</span>
-            <span className="text-opti-muted mt-1 md:mt-0 text-center"><span className="text-black">from</span> Decisions to Execution</span>
+          <motion.h1 variants={fadeUp} className="text-4xl sm:text-5xl md:text-[64px] lg:text-7xl font-semibold tracking-tight text-opti-text leading-[1.1] mb-6 text-center w-full flex flex-col items-center px-2">
+            <span className="mb-2 md:mb-0 text-center w-full">Autonomous AI Agents <span className="text-black">for</span></span>
+            <span className="text-opti-muted mt-1 md:mt-0 text-center w-full lg:whitespace-nowrap">Revenue & Profit Optimisation</span>
           </motion.h1>
 
           <motion.p variants={fadeUp} className="text-lg sm:text-xl md:text-2xl text-opti-muted max-w-4xl mx-auto px-4 mb-10 leading-relaxed text-center text-balance">
-            <span className="block md:inline">OptiNyxus deploys autonomous agents that </span>
-            <span className="block md:inline mt-1 md:mt-0">identify opportunities, set prices, engage customers and execute operations in real time.</span>
+            <span className="block md:inline">Deploy AI agents that continuously price, allocate and personalize decisions,</span>
+            <span className="block md:inline mt-1 md:mt-0"> executing directly across your systems.</span>
           </motion.p>
 
           <motion.div variants={fadeUp} className="flex flex-col sm:flex-row justify-center gap-4 mb-20">
-            <button 
+            <button
               onClick={() => window.dispatchEvent(new CustomEvent('open-contact'))}
               className="bg-opti-text text-white px-8 py-4 rounded-[16px] font-medium hover:bg-black transition-all hover:scale-105 active:scale-95 shadow-lg shadow-black/10"
             >
@@ -216,7 +216,7 @@ export default function Home() {
             <motion.h2 variants={fadeUp} className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-tight mb-4 md:mb-6 text-balance px-2">
               From signals to action automatically
             </motion.h2>
-            
+
             <motion.div variants={fadeUp} className="text-xl md:text-2xl text-opti-muted max-w-4xl mx-auto flex flex-col mb-4 md:mb-6 px-4 text-balance leading-tight">
               <p>Most systems tell you what happened.</p>
               <p>Some tell you what to do.</p>

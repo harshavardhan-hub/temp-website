@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { X } from "lucide-react";
+import { X, Mail } from "lucide-react";
 
 export default function ContactPopup() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +16,7 @@ export default function ContactPopup() {
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
       <div 
-        className="bg-white rounded-[24px] w-full max-w-md p-8 relative shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-black/5"
+        className="bg-white rounded-[24px] w-full max-w-md p-8 relative shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-black/5 animate-in fade-in zoom-in duration-200"
       >
         <button 
           onClick={() => setIsOpen(false)}
@@ -25,33 +25,31 @@ export default function ContactPopup() {
           <X className="w-4 h-4" />
         </button>
         
-        <h2 className="text-2xl font-bold mb-6 text-opti-text">Contact</h2>
-        
-        <div className="space-y-5">
-          <div>
-            <label className="block text-sm font-medium text-gray-600 mb-1.5">Name</label>
-            <input 
-              type="text" 
-              value="Suvranjan Biswas" 
-              readOnly
-              className="w-full border border-gray-200 rounded-[12px] px-4 py-3 bg-gray-50 text-gray-900 focus:outline-none font-medium"
-            />
+        <div className="flex flex-col items-center justify-center text-center pt-4 pb-2">
+          <div className="w-16 h-16 bg-opti-accent-teal/10 text-opti-accent-teal rounded-full flex items-center justify-center mb-6 shadow-sm border border-opti-accent-teal/20">
+            <Mail className="w-8 h-8" />
           </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-600 mb-1.5">Email</label>
-            <input 
-              type="email" 
-              value="suvranjanbiswas@gmail.com" 
-              readOnly
-              className="w-full border border-gray-200 rounded-[12px] px-4 py-3 bg-gray-50 text-gray-900 focus:outline-none font-medium"
-            />
-          </div>
+          
+          <h2 className="text-2xl font-bold mb-3 text-opti-text">
+            Get in touch
+          </h2>
+          
+          <p className="text-gray-600 mb-8 leading-relaxed">
+            Please drop a mail to
+            <a 
+              href="mailto:info@optinyxus.onmicrosoft.com" 
+              className="block mt-2 font-semibold text-opti-accent-teal hover:underline text-lg sm:text-xl break-all"
+            >
+              info@optinyxus.onmicrosoft.com
+            </a>
+          </p>
+          
           <button 
             type="button"
             onClick={() => setIsOpen(false)}
-            className="w-full bg-opti-text text-white py-3.5 rounded-[12px] font-medium hover:bg-black transition-all shadow-md mt-4"
+            className="w-full bg-opti-text text-white py-3.5 rounded-[12px] font-medium hover:bg-black transition-all shadow-md"
           >
-            Done
+            Close
           </button>
         </div>
       </div>

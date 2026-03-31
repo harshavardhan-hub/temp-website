@@ -15,7 +15,7 @@ const FLOWS = [
       { agent: "MarketEdge", action: "Allocates spend to Segment X" },
       { agent: "PriceGenix", action: "Optimizes pricing for Segment X" },
       { agent: "EngageSync", action: "Decides next-best-action" },
-      { agent: "OptiFlow",   action: "Prioritizes Segment X shipments" },
+      { agent: "OptiFlow", action: "Prioritizes Segment X shipments" },
     ],
     outcome: "Conversion and Revenue lift",
   },
@@ -24,10 +24,10 @@ const FLOWS = [
     label: "Precise Pricing",
     signal: "Competitor price drop",
     steps: [
-      { agent: "System",     action: "Detects market shift" },
+      { agent: "System", action: "Detects market shift" },
       { agent: "PriceGenix", action: "Recalculates elasticity" },
       { agent: "PriceGenix", action: "Adjusts pricing dynamically" },
-      { agent: "System",     action: "Monitors margin impact" },
+      { agent: "System", action: "Monitors margin impact" },
     ],
     outcome: "Margin growth, Volume sustained",
   },
@@ -47,7 +47,7 @@ const FLOWS = [
     signal: "Workflow delay or backlog",
     steps: [
       { agent: "OptiFlow", action: "Reroutes process automatically" },
-      { agent: "System",   action: "Auto-resolves bottleneck" },
+      { agent: "System", action: "Auto-resolves bottleneck" },
     ],
     outcome: "Faster Cycle time",
   },
@@ -70,7 +70,7 @@ const getAgentTheme = (agent: string) => {
 function FlowDetailProfessional({ flow }: { flow: Flow }) {
   return (
     <div className="flex flex-col h-full justify-between gap-3 md:gap-4 overflow-hidden">
-      
+
       {/* Signal Section */}
       <div className="flex items-start gap-3 md:gap-4 shrink-0">
         <div className="mt-1 w-10 h-10 md:w-12 md:h-12 rounded-full bg-red-50 text-red-600 flex items-center justify-center shrink-0 border border-red-100">
@@ -89,8 +89,8 @@ function FlowDetailProfessional({ flow }: { flow: Flow }) {
       {/* Steps Path */}
       <div className="flex-1 ml-5 md:ml-6 border-l-2 border-dashed border-zinc-200 flex flex-col justify-center gap-3 md:gap-4 lg:gap-5 py-1 md:py-2 pl-6 md:pl-8 relative">
         {flow.steps.map((step, i) => (
-          <motion.div 
-            key={i} 
+          <motion.div
+            key={i}
             className="flex flex-col relative"
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
@@ -98,7 +98,7 @@ function FlowDetailProfessional({ flow }: { flow: Flow }) {
           >
             {/* Path Node marker */}
             <div className="absolute -left-[31px] md:-left-[39px] top-1.5 w-2.5 h-2.5 md:w-3 md:h-3 bg-white border-2 border-zinc-300 rounded-full" />
-            
+
             <div className="flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-3">
               <span className={`text-[10px] md:text-xs font-bold uppercase tracking-wider px-2 py-1 md:px-2.5 md:py-1 rounded-md border ${getAgentTheme(step.agent)} w-fit shrink-0`}>
                 {step.agent}
@@ -109,9 +109,9 @@ function FlowDetailProfessional({ flow }: { flow: Flow }) {
             </div>
           </motion.div>
         ))}
-        
+
         {/* Animated flow particle overlay */}
-        <motion.div 
+        <motion.div
           className="absolute left-[-5px] top-0 w-2 h-8 rounded-full bg-opti-border/80 pointer-events-none"
           animate={{ y: [0, 250] }}
           transition={{ duration: 2.5, repeat: Infinity, ease: "linear" }}
@@ -119,7 +119,7 @@ function FlowDetailProfessional({ flow }: { flow: Flow }) {
       </div>
 
       {/* Outcome Section */}
-      <motion.div 
+      <motion.div
         className="bg-emerald-50 border border-emerald-100 rounded-xl md:rounded-2xl p-4 md:p-6 flex flex-row items-center justify-between gap-3 shrink-0"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
@@ -147,7 +147,7 @@ function FlowDetailProfessional({ flow }: { flow: Flow }) {
 function InteractiveFlows() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"]
@@ -166,12 +166,12 @@ function InteractiveFlows() {
     <div ref={containerRef} className="relative w-full h-[400vh] bg-opti-bg">
       {/* ── Sticky view container ── */}
       <div className="sticky top-[72px] w-full h-[calc(100dvh-72px)] overflow-hidden flex items-center bg-opti-bg border-y border-opti-border">
-        
+
         {/* Very subtle background texture */}
         <div className="absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none mix-blend-multiply" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 w-full grid grid-cols-1 md:grid-cols-[1fr_1.2fr] lg:grid-cols-[1fr_1.5fr] gap-6 md:gap-10 lg:gap-16 items-center">
-          
+
           {/* ── Left: Elegant Typographic Nav ── */}
           <div className="flex flex-col justify-center">
             <div className="mb-4 md:mb-8 lg:mb-10">
@@ -182,33 +182,33 @@ function InteractiveFlows() {
                 Autonomous orchestration.
               </h2>
             </div>
-            
+
             {/* Mobile-only pagination dots */}
             <div className="flex md:hidden items-center gap-2 mb-2">
               {FLOWS.map((f, i) => (
-                <div 
-                  key={f.id} 
-                  className={`h-1.5 rounded-full transition-all duration-300 ${activeIndex === i ? 'w-6 bg-opti-text' : 'w-2 bg-opti-border'}`} 
+                <div
+                  key={f.id}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${activeIndex === i ? 'w-6 bg-opti-text' : 'w-2 bg-opti-border'}`}
                 />
               ))}
             </div>
 
             {/* Desktop-only flow list */}
             <div className="hidden md:flex flex-col gap-1 relative border-l-2 border-opti-border pl-4 lg:pl-6">
-              
+
               {/* Active animated indicator */}
-              <motion.div 
+              <motion.div
                 className="absolute left-[-2px] top-0 w-[2px] bg-opti-text rounded-full origin-top"
                 initial={false}
-                animate={{ 
-                  height: `${(100 / FLOWS.length)}%`, 
-                  y: `${activeIndex * 100}%` 
+                animate={{
+                  height: `${(100 / FLOWS.length)}%`,
+                  y: `${activeIndex * 100}%`
                 }}
                 transition={{ type: "spring", stiffness: 400, damping: 40 }}
               />
 
               {FLOWS.map((f, i) => (
-                <div 
+                <div
                   key={f.id}
                   className="py-2 lg:py-4 flex flex-col transition-all duration-300 pointer-events-none"
                   style={{ opacity: activeIndex === i ? 1 : 0.4 }}
@@ -221,7 +221,7 @@ function InteractiveFlows() {
             </div>
 
             <p className="hidden md:flex mt-6 lg:mt-10 text-[10px] lg:text-xs font-medium text-opti-muted uppercase tracking-widest flex items-center gap-2 opacity-60">
-              <motion.span 
+              <motion.span
                 animate={{ y: [0, 5, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
               >
@@ -258,10 +258,10 @@ function InteractiveFlows() {
 export default function HowItWorksPage() {
   return (
     <div className="w-full bg-opti-bg min-h-screen flex flex-col font-sans">
-      
+
       {/* ── 1. Hero header ── */}
       <section className="py-24 px-6 max-w-7xl mx-auto text-center w-full">
-        <motion.h1 
+        <motion.h1
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-opti-text mb-6 flex flex-col md:block items-center text-balance px-2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -277,7 +277,7 @@ export default function HowItWorksPage() {
       {/* ── 3. Case Snippets ── */}
       <section className="py-32 px-6 bg-white border-t border-opti-border w-full">
         <div className="max-w-7xl mx-auto">
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-4xl font-semibold mb-12 text-center text-opti-text"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -304,13 +304,13 @@ export default function HowItWorksPage() {
               },
               {
                 industry: "Banking / Lending",
-                metric: "3x faster / efficient customer engagement decisions",
+                metric: "3x efficient customer engagement decisions",
                 problem: "Manual campaign cycles",
                 action: "EngageSync automation",
                 result: "Faster conversions, lower CAC"
               }
             ].map((caseItem, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
                 className="bg-opti-accent-pink/50 border border-opti-border p-8 rounded-3xl"
                 initial={{ opacity: 0, y: 30 }}
@@ -320,7 +320,7 @@ export default function HowItWorksPage() {
               >
                 <span className="text-xs font-bold uppercase tracking-widest text-opti-muted mb-4 block">{caseItem.industry}</span>
                 <h3 className="text-2xl font-semibold text-opti-text mb-8">{caseItem.metric}</h3>
-                
+
                 <div className="space-y-4 text-sm bg-white p-6 rounded-2xl border border-opti-border shadow-sm">
                   <div className="flex flex-col">
                     <span className="text-opti-muted uppercase text-xs font-semibold mb-1">Problem</span>
