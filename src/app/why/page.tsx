@@ -67,7 +67,7 @@ export default function WhyOptiNyxus() {
                   {/* Traditional */}
                   <div className="flex-1 flex flex-col gap-1 bg-zinc-50 p-4 sm:p-5 border-b sm:border-b-0 sm:border-r border-opti-border relative overflow-visible">
                     <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-400">Traditional</span>
-                    <span className="text-sm font-medium text-zinc-500 line-through decoration-zinc-300">
+                    <span className="text-sm font-medium text-zinc-500">
                       {r.b}
                     </span>
                     
@@ -326,9 +326,12 @@ export default function WhyOptiNyxus() {
           <p className="text-base md:text-lg text-opti-muted max-w-xl mx-auto leading-relaxed mb-8">
             Deploy AI agents that continuously run your business — across growth, pricing, engagement, and operations.
           </p>
-          <Link href="/contact" className="inline-block bg-opti-text text-white px-8 py-4 rounded-[12px] font-medium text-base hover:opacity-90 transition-all hover:scale-[1.02] active:scale-95 shadow-md">
+          <button 
+            onClick={() => window.dispatchEvent(new CustomEvent('open-contact'))}
+            className="inline-block bg-opti-text text-white px-8 py-4 rounded-[12px] font-medium text-base hover:opacity-90 transition-all hover:scale-[1.02] active:scale-95 shadow-md"
+          >
             Request demo
-          </Link>
+          </button>
         </motion.div>
       </section>
 

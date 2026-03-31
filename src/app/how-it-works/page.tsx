@@ -11,16 +11,17 @@ const FLOWS = [
     label: "Revenue Growth",
     signal: "Drop in conversion in Segment X",
     steps: [
-      { agent: "System",     action: "Detects opportunity" },
-      { agent: "MarketEdge", action: "Prioritizes high-value segment" },
-      { agent: "EngageSync", action: "Launches targeted engagement" },
-      { agent: "PriceGenix", action: "Adjusts pricing dynamically" },
+      { agent: "EngageSync", action: "Spots opportunity" },
+      { agent: "MarketEdge", action: "Allocates spend to Segment X" },
+      { agent: "PriceGenix", action: "Optimizes pricing for Segment X" },
+      { agent: "EngageSync", action: "Decides next-best-action" },
+      { agent: "OptiFlow",   action: "Prioritizes Segment X shipments" },
     ],
     outcome: "Conversion and Revenue lift",
   },
   {
     id: 1,
-    label: "Pricing Optimization",
+    label: "Precise Pricing",
     signal: "Competitor price drop",
     steps: [
       { agent: "System",     action: "Detects market shift" },
@@ -32,7 +33,7 @@ const FLOWS = [
   },
   {
     id: 2,
-    label: "Customer Retention",
+    label: "Customer Orchestration",
     signal: "High churn probability",
     steps: [
       { agent: "EngageSync", action: "Triggers retention journey" },
@@ -42,7 +43,7 @@ const FLOWS = [
   },
   {
     id: 3,
-    label: "Operations",
+    label: "Process Autonomy",
     signal: "Workflow delay or backlog",
     steps: [
       { agent: "OptiFlow", action: "Reroutes process automatically" },
@@ -86,7 +87,7 @@ function FlowDetailProfessional({ flow }: { flow: Flow }) {
       </div>
 
       {/* Steps Path */}
-      <div className="flex-1 ml-5 md:ml-6 border-l-2 border-dashed border-zinc-200 flex flex-col justify-center gap-4 md:gap-6 lg:gap-8 py-2 md:py-4 pl-6 md:pl-8 relative">
+      <div className="flex-1 ml-5 md:ml-6 border-l-2 border-dashed border-zinc-200 flex flex-col justify-center gap-3 md:gap-4 lg:gap-5 py-1 md:py-2 pl-6 md:pl-8 relative">
         {flow.steps.map((step, i) => (
           <motion.div 
             key={i} 
@@ -261,12 +262,12 @@ export default function HowItWorksPage() {
       {/* ── 1. Hero header ── */}
       <section className="py-24 px-6 max-w-7xl mx-auto text-center w-full">
         <motion.h1 
-          className="text-5xl md:text-7xl font-semibold tracking-tight text-opti-text mb-6 text-balance"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-opti-text mb-6 flex flex-col md:block items-center text-balance px-2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          Real decisions. Real execution. <span className="text-opti-muted">Real outcomes.</span>
+          <span className="md:whitespace-nowrap mb-2 md:mb-0">Real decisions. Real execution.</span> <span className="text-opti-muted md:whitespace-nowrap block md:inline">Real outcomes.</span>
         </motion.h1>
       </section>
 
@@ -289,21 +290,21 @@ export default function HowItWorksPage() {
             {[
               {
                 industry: "Retail",
-                metric: "+27% revenue from micro-segmentation activation",
-                problem: "Underutilized customer base",
-                action: "MarketEdge + EngageSync",
+                metric: "+10% revenue increase from marketing exercise",
+                problem: "Inefficient use of funds",
+                action: "MarketEdge deployment",
                 result: "Immediate lift in targeted segments"
               },
               {
-                industry: "E-commerce",
-                metric: "+12% margin via real-time pricing",
-                problem: "Static pricing",
+                industry: "Omni-Channel Business",
+                metric: "+60% margin via real-time pricing",
+                problem: "Decentralised Sales-driven Pricing",
                 action: "PriceGenix deployment",
                 result: "Margin expansion without volume loss"
               },
               {
                 industry: "Banking / Lending",
-                metric: "3x faster customer engagement decisions",
+                metric: "3x faster / efficient customer engagement decisions",
                 problem: "Manual campaign cycles",
                 action: "EngageSync automation",
                 result: "Faster conversions, lower CAC"

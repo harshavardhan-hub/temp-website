@@ -114,14 +114,14 @@ export default function Home() {
           animate="visible"
           variants={stagger}
         >
-          <motion.h1 variants={fadeUp} className="text-5xl md:text-[64px] lg:text-7xl font-semibold tracking-tight text-opti-text leading-[1.1] mb-6 text-center w-full flex flex-col items-center">
+          <motion.h1 variants={fadeUp} className="text-4xl sm:text-5xl md:text-[64px] lg:text-7xl font-semibold tracking-tight text-opti-text leading-[1.1] mb-6 text-center w-full flex flex-col items-center text-balance px-2">
             <span className="mb-2 md:mb-0 text-center">AI agents that run your business</span>
-            <span className="text-opti-muted mt-2 md:mt-0 text-center"><span className="text-black">from</span> Decisions to Execution</span>
+            <span className="text-opti-muted mt-1 md:mt-0 text-center"><span className="text-black">from</span> Decisions to Execution</span>
           </motion.h1>
 
-          <motion.p variants={fadeUp} className="text-xl md:text-2xl text-opti-muted w-full max-w-[1200px] mx-auto px-4 mb-10 leading-relaxed text-center flex flex-col items-center">
-            <span className="text-center">OptiNyxus deploys autonomous agents that</span>
-            <span className="text-center md:whitespace-nowrap">identify opportunities, set prices, engage customers and execute operations in real time.</span>
+          <motion.p variants={fadeUp} className="text-lg sm:text-xl md:text-2xl text-opti-muted max-w-4xl mx-auto px-4 mb-10 leading-relaxed text-center text-balance">
+            <span className="block md:inline">OptiNyxus deploys autonomous agents that </span>
+            <span className="block md:inline mt-1 md:mt-0">identify opportunities, set prices, engage customers and execute operations in real time.</span>
           </motion.p>
 
           <motion.div variants={fadeUp} className="flex flex-col sm:flex-row justify-center gap-4 mb-20">
@@ -204,30 +204,32 @@ export default function Home() {
       </section>
 
       {/* How It Works Summary */}
-      <section className="w-full py-20 md:py-32 px-6 bg-white shrink-0">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
+      <section className="w-full pt-20 pb-10 md:pt-32 md:pb-16 px-6 bg-white shrink-0">
+        <div className="max-w-7xl mx-auto flex flex-col items-center">
           <motion.div
-            className="flex-1"
+            className="w-full flex flex-col items-center text-center mb-8"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={stagger}
           >
-            <motion.h2 variants={fadeUp} className="text-3xl md:text-5xl font-semibold tracking-tight mb-6">
+            <motion.h2 variants={fadeUp} className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-tight mb-4 md:mb-6 text-balance px-2">
               From signals to action automatically
             </motion.h2>
-            <motion.div variants={fadeUp} className="text-xl text-opti-muted leading-relaxed space-y-4">
+            
+            <motion.div variants={fadeUp} className="text-xl md:text-2xl text-opti-muted max-w-4xl mx-auto flex flex-col mb-4 md:mb-6 px-4 text-balance leading-tight">
               <p>Most systems tell you what happened.</p>
               <p>Some tell you what to do.</p>
-              <p className="font-medium text-opti-text">None actually do it.</p>
-              <p className="pt-4">
-                OptiNyxus is an Autonomous Decisioning System AI agents that continuously -
-              </p>
+              <p className="font-semibold text-opti-text">None actually do it.</p>
             </motion.div>
+
+            <motion.h3 variants={fadeUp} className="text-xl md:text-2xl lg:text-3xl font-medium tracking-tight text-opti-text text-balance px-4 leading-relaxed">
+              OptiNyxus is an <span className="font-semibold">Autonomous Decisioning System</span> with AI agents that continuously
+            </motion.h3>
           </motion.div>
 
           <motion.div
-            className="flex-1 flex flex-col gap-8 w-full"
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
@@ -238,12 +240,12 @@ export default function Home() {
               { num: "2", title: "Decide", desc: "AI agents evaluate opportunities, optimize decisions, and learn continuously" },
               { num: "3", title: "Act", desc: "Campaigns launched, prices updated, workflows executed — automatically" }
             ].map((step, index) => (
-              <motion.div key={index} variants={fadeUp} className="bg-gray-50 border border-opti-border rounded-2xl p-8 flex gap-6 items-start hover:shadow-md transition-shadow">
+              <motion.div key={index} variants={fadeUp} className="bg-gray-50 border border-opti-border rounded-2xl p-8 flex flex-col gap-6 items-start hover:shadow-md transition-shadow h-full text-left">
                 <div className="w-12 h-12 shrink-0 bg-white rounded-full flex items-center justify-center text-opti-accent-teal font-bold text-xl shadow-sm border border-opti-border">
                   {step.num}
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-opti-text mb-2">{step.title}</h3>
+                  <h3 className="text-xl font-semibold text-opti-text mb-3">{step.title}</h3>
                   <p className="text-opti-muted leading-relaxed">{step.desc}</p>
                 </div>
               </motion.div>
